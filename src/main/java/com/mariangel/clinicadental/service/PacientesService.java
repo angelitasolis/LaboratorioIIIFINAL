@@ -45,15 +45,15 @@ public class PacientesService {
         }
     }
     
-    public Respuesta getPaciente(Long pacId) {
+    public Respuesta getPaciente(Long pacCedula) {
         try {
             Query qryPaciente = em.createNamedQuery("Pacientes.findByPacId", Pacientes.class);
-            qryPaciente.setParameter("pacId", pacId);
+            qryPaciente.setParameter("pacId", pacCedula);
 
             return new Respuesta(true, "", "", "Paciente", new PacientesDto((Pacientes) qryPaciente.getSingleResult()));
 
         } catch (NoResultException ex) {
-            return new Respuesta(false, "No existe un paciente con el código ingresado.", "getPaciente NoResultException");
+            return new Respuesta(false, "No existe un paciente con la cedula ingresada.", "getPaciente NoResultException");
         } catch (NonUniqueResultException ex) {
             Logger.getLogger(PacientesService.class.getName()).log(Level.SEVERE, "Ocurrio un error al consultar el paciente .", ex);
             return new Respuesta(false, "Ocurrio un error al consultar el paciente.", "getPaciente NonUniqueResultException");

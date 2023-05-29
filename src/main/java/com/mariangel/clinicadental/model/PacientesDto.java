@@ -94,9 +94,10 @@ public class PacientesDto {
         this.pacCedula.set(empCedula);
     }
 
-    public void getPacDirec(String empCedula) {
-        this.pacDirec.set(empCedula);
+    public String getPacDirec(String empCedula) {
+        return pacDirec.get();
     }
+    
      public void setPacDirec(String empCedula) {
         this.pacDirec.set(empCedula);
     }
@@ -108,7 +109,5 @@ public class PacientesDto {
           public LocalDate getPacFecnac() {
         return pacFecnac.get();
     }
-          
-          
-          
+             
 }

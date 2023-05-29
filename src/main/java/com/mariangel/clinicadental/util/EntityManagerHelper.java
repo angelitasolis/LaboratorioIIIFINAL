@@ -21,7 +21,7 @@ public class EntityManagerHelper {
 
     static {
         try {
-            emf = Persistence.createEntityManagerFactory("UnaPlanillaPU");
+            emf = Persistence.createEntityManagerFactory("com.mariangel_Clinica_Dental_LabIII_PU");
             em = emf.createEntityManager();
         } catch (ExceptionInInitializerError e) {
             throw e;

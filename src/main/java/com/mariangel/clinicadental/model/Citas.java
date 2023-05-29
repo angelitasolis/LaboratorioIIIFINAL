@@ -10,6 +10,8 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -46,7 +48,8 @@ public class Citas implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "CITA_ID")
-     @SequenceGenerator(name = "PLAM_EMPLEADOS_EMP_ID_GENERATOR", sequenceName = "una.PLAM_EMPLEADOS_SEQ01", allocationSize = 1)
+    @SequenceGenerator(name = "SEC_CITAS", sequenceName = "SEC_CITAS", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEC_CITAS")
     private Long citaId;
 
     public Citas() {

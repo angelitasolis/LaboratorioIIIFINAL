@@ -53,15 +53,15 @@ public class CitasDto {
         return citaCedupac.get();
     }
 
-    public void setCitaCedupac(String pacNombre) {
-        this.citaCedupac.set(pacNombre);
+    public void setCitaCedupac(String pacCedula) {
+        this.citaCedupac.set(pacCedula);
     }
 
     public String getcitaHora() {
         return citaHora.get();
     }
      public void setCitaHora(String citaHora) {
-        this.citaHora.set(citaHora);;
+        this.citaHora.set(citaHora);
     }
 
     public LocalDate getCitaDia() {
